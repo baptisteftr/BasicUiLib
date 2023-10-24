@@ -19,9 +19,9 @@ public extension View {
 public struct DismissButton: View {
     @Environment(\.dismiss) private var dismiss
 
-    @State var text: String
+    @Binding var text: String
 
-    var body: some View {
+    public var body: some View {
         Button(text) {
             dismiss()
         }
