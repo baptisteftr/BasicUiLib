@@ -41,3 +41,37 @@ public struct DismissButton: View {
         }
     }
 }
+
+public struct CircleProgressLibView: View {
+    public var percent: Double
+    public var size: Double
+    public var mainColor: Color?
+    public var backColor: Color?
+
+    public init(percent: Double, size: Double, mainColor: Color? = nil, backColor: Color? = nil) {
+        self.percent = percent
+        self.size = size
+        self.mainColor = mainColor
+        self.backColor = backColor
+    }
+
+    public var body: some View {
+        ZStack {
+            Circle()
+                .stroke(backColor != nil ? backColor! : Color(UIColor.tertiarySystemBackground), lineWidth: 4)
+                .frame(width: size, height: size)
+
+            Circle()
+                .trim(from: 0, to: percent)
+                .stroke(mainColor != nil ? mainColor! : Color(UIColor.systemBlue), lineWidth: 4)
+                .frame(width: size, height: size)
+                .rotationEffect(.degrees(-180))
+        }
+        .frame(width: size + 10, height: size + 10, alignment: .center)
+    }
+}
+
+
+
+
+
