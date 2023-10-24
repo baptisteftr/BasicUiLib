@@ -14,3 +14,16 @@ public extension View {
             )
     }
 }
+
+@available(iOS 15.0, *)
+struct DismissButton: View {
+    @Environment(\.dismiss) private var dismiss
+
+    @State var text: String
+
+    var body: some View {
+        Button(text) {
+            dismiss()
+        }
+    }
+}
