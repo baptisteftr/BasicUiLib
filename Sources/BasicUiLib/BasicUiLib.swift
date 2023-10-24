@@ -16,7 +16,7 @@ public extension View {
 }
 
 @available(iOS 15.0, *)
-struct DismissButton: View {
+public struct DismissButton: View {
     @Environment(\.dismiss) private var dismiss
 
     @State var text: String
