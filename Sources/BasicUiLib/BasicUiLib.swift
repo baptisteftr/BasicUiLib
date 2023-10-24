@@ -16,6 +16,16 @@ public extension View {
 }
 
 @available(iOS 15.0, *)
+public var RandomColor: Color {
+    let red = Double.random(in: 0...1)
+    let green = Double.random(in: 0...1)
+    let blue = Double.random(in: 0...1)
+    return Color(red: red, green: green, blue: blue)
+}
+
+// ----------------------------------------------------------------------------- \\
+
+@available(iOS 15.0, *)
 public struct DismissButton: View {
     @Environment(\.dismiss) private var dismiss
 
