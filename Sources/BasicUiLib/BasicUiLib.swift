@@ -19,7 +19,7 @@ public extension View {
 public struct DismissButton: View {
     @Environment(\.dismiss) private var dismiss
 
-    @Binding var text: String
+    public var text: String
 
     public var body: some View {
         Button(text) {
